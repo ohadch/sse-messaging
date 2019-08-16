@@ -1,2 +1,2 @@
-from rethinkdb import RethinkDB
-r = RethinkDB()
+from services.redis import get_redis
+
