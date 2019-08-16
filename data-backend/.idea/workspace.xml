@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ef437ef-909f-4df0-861a-b765c61c3643" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../pubsub/config/pipeline.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pubsub/services/pipeline.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pubsub/.env" beforeDir="false" afterPath="$PROJECT_DIR$/../pubsub/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pubsub/pubsub.js" beforeDir="false" afterPath="$PROJECT_DIR$/../pubsub/pubsub.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pubsub/services/redis-subscriber.js" beforeDir="false" afterPath="$PROJECT_DIR$/../pubsub/services/redis-subscriber.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/services/redis-subscriber.js" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp/services/redis-subscriber.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,6 +74,8 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="PORT" value="9500" />
+        <env name="REDIS_HOST" value="192.168.99.100" />
+        <env name="REDIS_PORT" value="6379" />
       </envs>
       <option name="SDK_HOME" value="C:\dev\Anaconda3\envs\queues\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />

@@ -10,11 +10,14 @@ function handleTask(channel, message) {
 
     console.log(`${channel}, ${message}`);
 
-    callPipeline(channel, task);
+    if (channel === "new_task") {
+        callPipeline(channel, task);
+    }
+    
 }
 
 
 redisSubscriber.on("message", handleTask);
 
 
-redisSubscriber.subscribe("tasks");
+redisSubscriber.subscribe("new_task");

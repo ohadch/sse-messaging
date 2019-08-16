@@ -21,7 +21,10 @@ app.get('/stream', function(request, response) {
 
     // Listen for changes
     redisSubscriber.on("message", function (channel, message) {
-        sse.push_sse(1, "message", message);
+        if (channel === "task_success") {
+            console.log("task success");
+            sse.push_sse(1, "task_success", message);
+        }
     });
 
 });
