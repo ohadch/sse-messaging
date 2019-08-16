@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3c6ed78e-911f-41a3-8b90-fb68231ce2ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/redis.py" afterDir="false" />
+    <list default="true" id="1ef437ef-909f-4df0-861a-b765c61c3643" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pubsub/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pubsub/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pubsub/config/redis.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pubsub/pubsub.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pubsub/services/redis-subscriber.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webapp/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webapp/config/redis.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webapp/services/redis-subscriber.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/data-backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/data-backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webapp/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/redis.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/config/rethinkdb.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../webapp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../webapp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp/package.json" afterDir="false" />
     </list>
@@ -31,10 +42,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1PVKnj4fnLgzqIzLDsDz0raFZLN" />
+  <component name="ProjectId" id="1PVss2J3PyoIjl0u7JSULPBU47Q" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -50,7 +62,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="app" type="PythonConfigurationType" factoryName="Python">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="data-backend" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -58,11 +70,33 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="C:\dev\Anaconda3\envs\queues\python.exe" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python">
+      <module name="data-backend" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="PORT" value="9500" />
+      </envs>
+      <option name="SDK_HOME" value="C:\dev\Anaconda3\envs\queues\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -77,11 +111,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3c6ed78e-911f-41a3-8b90-fb68231ce2ed" name="Default Changelist" comment="" />
-      <created>1565899870295</created>
+      <changelist id="1ef437ef-909f-4df0-861a-b765c61c3643" name="Default Changelist" comment="" />
+      <created>1565970801784</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1565899870295</updated>
+      <updated>1565970801784</updated>
     </task>
     <servers />
   </component>
@@ -90,9 +124,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>

@@ -1,32 +1,30 @@
-const express = require('express');
-const sse = require('./services/sse');
-const r = require('rethinkdb');
+require('dotenv').config();
 
-const { HOST, PORT } = require('./config/rethinkdb');
+const express = require('express');
+
+const sse = require('./services/sse');
+const redisSubscriber = require('./services/redis-subscriber');
+
 const app = express();
 
+// Middleware
 app.use(sse.enable());
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+
+// Routes
 app.get('/stream', function(request, response) {
     sse.add(request, response);
     sse.push_sse(1, "opened", { msg: 'connection opened!' });
 
     // Listen for changes
-    r.connect( {host: HOST, port: PORT}, async function(err, connection) {
-        r.db('data').table('messages').changes().run(connection, function (err, cursor) {
-            if (err) throw err;
-            cursor.each(function (err, { new_val: record }) {
-                if (err) throw err;
-                sse.push_sse(1, "message", record);
-            });
-        });
+    redisSubscriber.on("message", function (channel, message) {
+        sse.push_sse(1, "message", message);
     });
 
 });
 
-
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 
 module.exports = app;
