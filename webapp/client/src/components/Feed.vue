@@ -2,7 +2,7 @@
   <div>
     <h1>Messages</h1>
     <ul>
-      <li v-for="message in sortedMessages" :key="message.id">{{ message.id }}. {{ message.text }}</li>
+      <li v-for="message in sortedMessages" :key="message.id">{{ message.id }}. {{ message.message }}</li>
     </ul>
   </div>
 </template>
@@ -36,8 +36,9 @@ export default {
         });
 
         // Listen for messages based on their event (in this case, "chat")
-        sse.subscribe("message", message => {
+        sse.subscribe("task_success", message => {
           // Make sure message does not exist
+          message = JSON.parse(message);
           if (this.messages.find(m => m.id === message.id)) {
             this.messages = this.messages.filter(m => m.id !== message.id)
           }

@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <feed />
+    <TaskManager />
+    <Feed />
   </div>
 </template>
 
 <script>
 import Feed from './components/Feed.vue'
+import TaskManager from './components/TaskManager.vue'
 
 export default {
   name: 'app',
   components: {
-    Feed
+    Feed,
+    TaskManager
   }
 }
 </script>
