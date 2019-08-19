@@ -7,11 +7,9 @@ r = redis.StrictRedis(REDIS_HOST, REDIS_PORT, db=0)
 
 def new_task(payload: dict):
     try:
-        print("Executing step")
         r.publish("task_success", json.dumps(payload))
     except Exception as e:
         r.publish("task_failure", json.dumps(payload))
-        print("Oh no, error")
 
 
 def get_step_func(step_name: str) -> callable:

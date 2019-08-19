@@ -1,8 +1,11 @@
 require('dotenv').config();
 
 const redis = require("redis");
+const multer = require("multer");
 const { HOST: REDIS_HOST, PORT: REDIS_PORT } = require("./config/redis");
 const express = require('express');
+const { fileFilter } = require("./utils/files");
+const { errorHandler } = require("./utils/middlewares");
 const sse = require('./services/sse');
 
 const app = express();
@@ -13,6 +16,13 @@ app.use(sse.enable());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+const upload = multer({
+    dest: "./uploads",
+    fileFilter,
+    limits: {
+        fileSize: 500000000 // 500 MB
+    }
+});
 
 // Routes
 app.get('/stream', function(request, response) {
@@ -30,6 +40,9 @@ app.get('/stream', function(request, response) {
 
 });
 
+app.post("/upload", upload.single("file"), function(req, res) {
+    return res.json({file: req.file})
+});
 
 app.post("/task", function(req, res) {
     const {id, message} = req.body;
@@ -40,5 +53,9 @@ app.post("/task", function(req, res) {
 
     return res.json({message: "task created", task: { id, message }})
 });
+
+
+app.use(errorHandler);
+
 
 module.exports = app;
