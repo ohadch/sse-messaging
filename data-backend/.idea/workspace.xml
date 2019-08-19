@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ef437ef-909f-4df0-861a-b765c61c3643" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/steps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webapp/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webapp/client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp/client/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webapp/client/src/components/Feed.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp/client/src/components/Feed.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webapp/services/redis-subscriber.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -118,21 +111,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/steps.py</url>
-          <line>10</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/steps.py</url>
-          <line>17</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

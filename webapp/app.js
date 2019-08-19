@@ -36,7 +36,7 @@ app.post("/task", function(req, res) {
     const redisClient = redis.createClient({ host: REDIS_HOST, port: REDIS_PORT });
 
     // Publish new message
-    redisClient.publish("new_task", JSON.stringify({ id, message }))
+    redisClient.publish("new_task", JSON.stringify({ id, message }));
 
     return res.json({message: "task created", task: { id, message }})
 });
