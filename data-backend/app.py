@@ -12,8 +12,8 @@ def home():
     return jsonify({'message': 'Welcome to DIP PubSub'})
 
 
-@app.route("/steps/<step_name>", methods=["POST"])
-def step(step_name):
+@app.route("/steps/<entity>/<step_name>/<status>", methods=["POST"])
+def step(entity, step_name, status):
     data = json.loads(request.data)
     print(f"Step: {step_name}, payload: {pformat(data)}")
 

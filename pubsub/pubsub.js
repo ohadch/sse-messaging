@@ -2,23 +2,28 @@ require('dotenv').config();
 
 const redisSubscriber = require('./services/redis-subscriber');
 const { callPipeline } = require('./services/pipeline');
-
+const getNextStep = require("./utils/routing");
+const Task = require("./mongoose/models/task");
+const { upsert } = require("./mongoose/utils");
 console.log("PubSub is Listening...");
 
 async function handleTask(channel, message) {
-    const task = JSON.parse(message);
+    message = JSON.parse(message);
 
-    console.log(`${channel}, ${message}`);
+    // Unpack data
+    const { entity, step, status } = channel;
+    const { fileId } = message;
 
-    if (channel === "new_task") {
-        callPipeline(channel, task);
+    await upsert(Task, { fileId: fileId }, );
+
+    if (status === "ended") {
+        let nextStep = getNextStep(entity, step);
+        callPipeline(nextStep, message)
     }
 }
 
 
-redisSubscriber.on("message", function (channel, message) {
-    handleTask(channel, message)
-});
+redisSubscriber.on("message", handleTask);
 
 
-redisSubscriber.subscribe("new_task");
+redisSubscriber.psubscribe("file:*");

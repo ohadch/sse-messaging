@@ -1,11 +1,13 @@
 require('dotenv').config();
 
-const redis = require("redis");
+const os = require("os");
+const fs = require("fs");
+const path = require("path");
 const multer = require("multer");
-const { HOST: REDIS_HOST, PORT: REDIS_PORT } = require("./config/redis");
 const express = require('express');
 const { fileFilter } = require("./utils/files");
 const { errorHandler } = require("./utils/middlewares");
+const { createRedisClient, getId } = require("./utils/redis");
 const sse = require('./services/sse');
 
 const app = express();
@@ -26,7 +28,7 @@ const upload = multer({
 
 // Routes
 app.get('/stream', function(request, response) {
-    const redisClient = redis.createClient({ host: REDIS_HOST, port: REDIS_PORT });
+    const redisClient = createRedisClient();
 
     sse.add(request, response);
 
@@ -40,18 +42,31 @@ app.get('/stream', function(request, response) {
 
 });
 
-app.post("/upload", upload.single("file"), function(req, res) {
-    return res.json({file: req.file})
+app.post("/upload", upload.single("file"), async function(req, res) {
+    const client = createRedisClient();
+    const {file} = req;
+    const fileId = await getId("file");
+
+    client.publish(`file:upload:ended`, JSON.stringify({ file, fileId }));
+
+    res.json({ file, fileId })
 });
 
-app.post("/task", function(req, res) {
-    const {id, message} = req.body;
-    const redisClient = redis.createClient({ host: REDIS_HOST, port: REDIS_PORT });
+const sub = createRedisClient();
+sub.subscribe("file:upload:ended");
+sub.on("message", (channel, message) => {
+    const {file, fileId} = JSON.parse(message);
 
-    // Publish new message
-    redisClient.publish("new_task", JSON.stringify({ id, message }));
+    client.publish(`file:store:started`, JSON.stringify({ file, fileId }));
 
-    return res.json({message: "task created", task: { id, message }})
+    // Store in temp
+    const tempPath = path.join(os.tmpdir(), file.filename);
+    fs.rename(file.path, tempPath);
+    file.path = tempPath;
+
+    client.publish(`file:store:ended`, JSON.stringify({ file, fileId }));
+
+    console.log(channel, message)
 });
 
 

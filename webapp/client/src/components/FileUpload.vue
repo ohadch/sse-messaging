@@ -29,6 +29,7 @@ export default {
           formData.append("file", this.file);
 
           try {
+              this.message = "Uploading..."
               await axios.post("/upload", formData);
               this.message = "Upload succeeded. :)"
           } catch (e) {

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <FileUpload />
-    <TaskManager />
+    <!-- <TaskManager /> -->
     <Feed />
   </div>
 </template>

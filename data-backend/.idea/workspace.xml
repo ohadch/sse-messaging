@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ef437ef-909f-4df0-861a-b765c61c3643" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../pubsub/mongoose/models/task.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pubsub/mongoose/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pubsub/utils/routing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webapp/uploads/49138aa02b8166a36b71ebc5b6f57e86" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webapp/utils/redis.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/steps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pubsub/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../pubsub/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pubsub/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../pubsub/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pubsub/pubsub.js" beforeDir="false" afterPath="$PROJECT_DIR$/../pubsub/pubsub.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp/client/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webapp/client/src/components/FileUpload.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp/client/src/components/FileUpload.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
